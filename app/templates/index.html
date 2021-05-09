@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Height (Inches)</th>
+        <th scope="col">Weight (Pounds)</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in hw %}
+    <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.height }}</td>
+        <td>{{ i.weight }}</td>
+        <td>
+            <a href="/view/{{i.id}}" class="card-link btn btn-primary">View</a>
+            <a href="/edit/{{i.id}}" class="card-link btn btn-info">Edit</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
